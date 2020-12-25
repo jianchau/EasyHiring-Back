@@ -3,9 +3,10 @@ module.exports = {
         return whichModel(insertData).save()
     },
     delete(whichModel,whereData,type=0){
-        const deleteType = type === 0?'updateOne':type===1?'updateMany':'wrongType'
+        const deleteType = type === 0?'deleteOne':type===1?'deleteMany':'wrongType'
         deleteType === 'wrongType'&& console.error('delete函数参数传递错误');
-        whichModel[deleteType](whereData)
+        console.log(whichModel,whereData,deleteType);
+        return whichModel[deleteType](whereData)
     },
     update(whichModel,whereData,updateData,type){
         const updateType = type===0?'updateOne':type===1?'updateMany':'wrongType'

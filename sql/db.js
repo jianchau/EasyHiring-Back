@@ -1,10 +1,11 @@
-var  mongoose = require('moogoose')
-var db = mongoose.connect('mongodb://localhost:27017/easy-hiring')
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+var  mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/easy-hiring',{ useNewUrlParser: true,useUnifiedTopology: true })
+var connection = mongoose.connection
+connection.on('error', console.error.bind(console, 'connection error:'));
+connection.once('open', function() {
   console.log('db connected seccessfully');
 });
-db.on('disconnected',function(){
+connection.on('disconnected',function(){
     console.log('db disconnected aready');
 })
 
