@@ -15,7 +15,11 @@ const addOcupation = (req,res,next)=>{
 }
 
 const lookUpOcupation = (req,res,next)=>{
-    sql.find(OcupationModel,{},{_id:0,__v:0}).then(data=>{
+    let whereData = {}
+    if(req.query.departmentName){
+        whereData = {inWhichDepartment:departmentName}
+    }
+    sql.find(OcupationModel,whereData,{_id:0,__v:0}).then(data=>{
         res.status(200).send({
             code:200,
             message:'查看职位',
