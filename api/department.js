@@ -8,9 +8,9 @@ var departmentController = require('./../controller/department')
  * @apiParam {String} departmentName Department's unique ID.
  * @apiParam {String} departmentCode Department's unique Code.
  *
- * @apiSuccess {Number} code status of response.
- * @apiSuccess {String} message message of response.
- * @apiSuccess {String} departmentCode of new department
+ * @apiSuccess {Number} code Status of response.
+ * @apiSuccess {String} message Message of response.
+ * @apiSuccess {String} departmentCode DepartmentCode of new department
  * 
  * @apiSampleRequest /api/department/newDepartment
  */

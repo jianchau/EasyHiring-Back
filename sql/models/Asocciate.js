@@ -6,8 +6,9 @@ var AsocciateSchema = mongoose.Schema({
     cardID:{type:String,required:true},
     gender:{type:String,required:true},
     age:{type:Number,required:true},
-    avatar:{type:String,required:true},
+    avatar:{type:String,required:true,default:''},
     phoneNumber:{type:String,required:true},
+    startDate:{type:String,required:true},
     ocupation:{type:String,requried:true},
     inWhichDepartment:{type:String,required:true}
 })

@@ -1,5 +1,116 @@
 [
   {
+    "type": "post",
+    "url": "api/asocciate/addAsocciate",
+    "title": "Add asocciate",
+    "name": "addAsocciate",
+    "group": "asocciate",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "workID",
+            "description": "<p>Asocciate's workID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Asocciate's name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "cardID",
+            "description": "<p>Asocciate's identity card.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>Asocciate's gender.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "age",
+            "description": "<p>Asocciate's age.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "avatar",
+            "description": "<p>Asocciate's avatar.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phoneNumber",
+            "description": "<p>Asocciate's phone number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ocupation",
+            "description": "<p>Asocciate's ocupation.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "inWhichDepartment",
+            "description": "<p>Asocciate's department.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Status of response.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message of response.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "workID",
+            "description": "<p>WorkID of new department</p>"
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "/api/department/newDepartment"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "api/asocciate.js",
+    "groupTitle": "asocciate"
+  },
+  {
     "type": "get",
     "url": "api/department/lookUpDepartment",
     "title": "Look up department",
@@ -130,21 +241,21 @@
             "type": "Number",
             "optional": false,
             "field": "code",
-            "description": "<p>status of response.</p>"
+            "description": "<p>Status of response.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "message",
-            "description": "<p>message of response.</p>"
+            "description": "<p>Message of response.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "departmentCode",
-            "description": "<p>of new department</p>"
+            "description": "<p>DepartmentCode of new department</p>"
           }
         ]
       }
