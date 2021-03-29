@@ -1,5 +1,6 @@
 var DepartmentModel = require('../sql/models/Department')
 var OcupationModel = require('../sql/models/Ocupation')
+var AsocciateModel = require('../sql/models/Asocciate')
 var {getUuid} = require('./../utils/index')
 var sql = require('./../sql/index')
 
@@ -24,7 +25,15 @@ const newDepartment = (req,res,next)=>{
                 }
                 else{
                     insertData.departmentID = 'department-'+ getUuid()
-                    sql.insert(DepartmentModel,insertData).then(data=>{
+                    let {departmentName} = insertData
+                    let insertDataOcupation = {
+                        ocupationName:'经理',
+                        inWhichDepartment:departmentName,
+                    }
+                    let arr = []
+                    arr.push(sql.insert(DepartmentModel,insertData))
+                    arr.push(sql.insert(OcupationModel,insertDataOcupation))
+                    Promise.all(arr).then(data=>{
                         res.status(200).send({
                             code:200,
                             message:'添加部门',
@@ -53,6 +62,7 @@ const deleteDepartment = (req,res,next)=>{
     const arr = []
     arr.push(sql.delete(DepartmentModel,{departmentName},0))
     arr.push(sql.delete(OcupationModel,{inWhichDepartment:departmentName},1))
+    arr.push(sql.delete(AsocciateModel,{inWhichDepartment:departmentName},1))
     Promise.all(arr).then(data=>{
         res.status(200).send({
             code:200,

@@ -5,7 +5,7 @@ var DepartmentSchema = mongoose.Schema({
     departmentName:{type:String,required:true},
     departmentManager:{type:String,required:false},
     departmentQuantity:{type:Number,default:0},
-    departmentOcupations:{type:Array,required:false},
+    departmentOcupations:{type:Array,required:false,default:['经理']},
 })
 
 var DepartmentModel = mongoose.model('Department',DepartmentSchema)

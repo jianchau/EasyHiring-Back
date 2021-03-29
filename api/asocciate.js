@@ -25,8 +25,9 @@ const asocciateController = require('./../controller/asocciate')
  */
 router.post('/addAsocciate',asocciateController.addAsocciate)
 
-
 router.get('/lookUpAsocciate',asocciateController.lookUpAsocciate)
+
+router.get('/deleteAsocciate',asocciateController.deleteAsocciate)
 
 
 module.exports = router
